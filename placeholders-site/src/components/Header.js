@@ -9,7 +9,11 @@ const Header = () => {
 
   return (
     <header>
-      <img src="/logo.svg" alt="PlaceHolders Logo" style={{ height: '40px' }} />
+      <img 
+        src={process.env.PUBLIC_URL + '/knotfun-logo.png'}
+        alt="PlaceHolders Logo"
+        style={{ height: '60px' }}
+      />
       <nav>
         <a href="#hero">Home</a>
         <a href="#projects">Projects</a>

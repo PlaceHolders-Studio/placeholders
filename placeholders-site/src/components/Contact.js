@@ -3,8 +3,8 @@ import React from 'react';
 const Contact = () => (
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: team@placeholders.games</p>
-    <p><a href="https://itch.io" target="_blank" rel="noreferrer">Visit our itch.io</a></p>
+    <p>Email: 115182776+revalew@users.noreply.github.com</p>
+    <p><a href="https://place-holders.itch.io/" target="_blank" rel="noreferrer">Visit our itch.io</a></p>
   </section>
 );
 
