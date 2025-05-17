@@ -9,16 +9,21 @@ const Contact = () => (
         <div className="contact-item">
           <i className="contact-icon">✉️</i>
           <p>
-            <a href="mailto:115182776+revalew@users.noreply.github.com">
-              115182776+revalew@users.noreply.github.com
+            <a href="mailto:bartekk.gordon@gmail.com">
+              bartekk.gordon@gmail.com
             </a>
           </p>
         </div>
-        <div className="contact-item">
+        {/* <div className="contact-item">
           <i className="contact-icon">🎮</i>
           <p><a href="https://place-holders.itch.io/" target="_blank" rel="noreferrer">place-holders.itch.io</a></p>
-        </div>
+        </div> */}
+        {/* <div className="contact-item">
+          <i className="contact-icon">🤖</i>
+          <p><a href="https://discord.gg/vxpVks5TYF" target="_blank" rel="noreferrer">https://discord.gg/vxpVks5TYF</a></p>
+        </div> */}
         <div className="contact-social">
+          <a href="https://discord.gg/vxpVks5TYF" target="_blank" rel="noreferrer" className="social-link">Discord</a>
           <a href="https://github.com/knotfun" target="_blank" rel="noreferrer" className="social-link">GitHub</a>
           <a href="https://place-holders.itch.io/" target="_blank" rel="noreferrer" className="social-link">Itch.io</a>
         </div>
