@@ -1,0 +1,26 @@
+import React, { useEffect, useState } from 'react';
+
+const Header = () => {
+  const [lightMode, setLightMode] = useState(false);
+
+  useEffect(() => {
+    document.body.className = lightMode ? 'light' : '';
+  }, [lightMode]);
+
+  return (
+    <header>
+      <img src="/logo.svg" alt="PlaceHolders Logo" style={{ height: '40px' }} />
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <button onClick={() => setLightMode(!lightMode)}>
+          {lightMode ? 'Dark' : 'Light'} Mode
+        </button>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
