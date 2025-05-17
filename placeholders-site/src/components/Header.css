@@ -5,10 +5,18 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed; /* Zmień sticky na fixed */
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 10;
   transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 70px; /* Dostosuj wartość do wysokości twojego headera */
 }
 
 body.light header {
@@ -36,6 +44,44 @@ header.scrolled {
 .logo {
   height: 50px;
   transition: all 0.3s ease;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-logo-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-logo {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.mobile-site-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent);
 }
 
 .scrolled .logo {
@@ -98,4 +144,111 @@ nav a:hover::after {
 
 .theme-toggle:hover {
   background-color: var(--accent);
+}
+
+/* Mobile nav */
+/* Mobilne menu */
+.mobile-menu-button {
+  display: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--text);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+.hamburger.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.open span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Dodaj to */
+    z-index: 25; /* Wyższy niż menu */
+  }
+  
+  /* Dodaj styl dla ikony X */
+  .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text);
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Całkowicie poza ekranem gdy zamknięte */
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wycentruj elementy */
+    justify-content: center;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    z-index: 20;
+    overflow: auto; /* Na wszelki wypadek dla małych ekranów */
+    /* padding: 4rem 2rem 2rem; */
+  }
+  
+  nav.open {
+    right: 0;
+  }
+  
+  /* Ustawienie headera */
+  header {
+    z-index: 30; /* Wyższy niż menu i przycisk */
+  }
+  
+  /* Ukryj scrollbar podczas otwartego menu */
+  body.menu-open {
+    overflow: hidden;
+  }
 }

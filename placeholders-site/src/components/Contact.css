@@ -32,6 +32,8 @@
   width: 100%;
   max-width: 500px;
   transition: transform 0.3s ease;
+  flex-wrap: wrap; /* Add wrap for smaller screens */
+  box-sizing: border-box;
 }
 
 .contact-item:hover {
@@ -61,6 +63,8 @@
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center; /* Wycentruj przyciski */
+  width: 100%; /* Pełna szerokość kontenera */
 }
 
 .social-link {
@@ -77,4 +81,65 @@
 .social-link:hover {
   background-color: var(--accent);
   color: white;
+}
+
+.contact-item p {
+  word-break: break-all; /* Pozwala na łamanie słów */
+  overflow-wrap: break-word; /* Dodatkowe wsparcie dla zawijania długich słów */
+  max-width: 100%; /* Zapewnia, że tekst nie wyjdzie poza rodzica */
+  margin: 0;
+}
+
+/* @media (max-width: 500px) {
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-icon {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-social {
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .social-link {
+    width: 100%;
+    text-align: center;
+  }
+} */
+@media (max-width: 500px) {
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-item p {
+    width: 100%; /* Pełna szerokość dla kontenera paragrafu */
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-social {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 250px; /* Większa szerokość dla przycisków */
+  }
+  
+  .social-link {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
 }
