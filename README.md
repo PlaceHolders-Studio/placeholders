@@ -75,6 +75,8 @@ cd placeholders-site
 
 <br/>
 
+<br/>
+
 ```bash
 npm install gh-pages --save-dev
 ```
@@ -85,11 +87,15 @@ npm install gh-pages --save-dev
 
 <br/>
 
+<br/>
+
 Clear the `src` and `public` folders and add your custom content.
 
 <br/><br/>
 
 ### 6. Initialize a local git repository
+
+<br/>
 
 <br/>
 
@@ -127,6 +133,8 @@ git commit -m "Initial commit"
 
 <br/>
 
+<br/>
+
 ```bash
 git remote add origin https://github.com/knotfun/KnotFun.git
 ```
@@ -149,6 +157,8 @@ git push -u origin master
 
 <br/>
 
+<br/>
+
 ```bash
 npm run deploy
 ```
@@ -156,6 +166,8 @@ npm run deploy
 <br/><br/>
 
 ### 10. Test locally (optional, visit [`http://localhost:3000`](http://localhost:3000))
+
+<br/>
 
 <br/>
 
