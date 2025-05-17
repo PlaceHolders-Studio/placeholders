@@ -1,4 +1,5 @@
 import React from 'react';
+import './Team.css';
 
 const Team = () => {
   const members = [
@@ -8,18 +9,21 @@ const Team = () => {
     { name: 'Maksymilian Kisiel', role: 'Programmer' },
     { name: 'Mateusz Górecki', role: 'Programmer' },
     { name: 'Wojciech Owczarek', role: 'Game Designer, Artist, Programmer' },
-    { name: 'Samir Abu Safieh', role: 'Game Designer, Artist' },
+    { name: 'Samir Abu Safieh', role: 'Game Designer, Artist' }, // 7 osób
   ];
 
   return (
     <section id="team">
-      <h2>Meet the Team</h2>
-      {members.map((m, i) => (
-        <div key={i} style={{ marginBottom: '2rem' }}>
-          <h3>{m.name}</h3>
-          <p>{m.role}</p>
-        </div>
-      ))}
+      {/* <h2>Meet the <span className="accent">Team</span></h2> */}
+      <h2><span className="accent">Meet</span> the Team</h2>
+      <div className="team-grid">
+        {members.map((m, i) => (
+          <div key={i} className="team-member">
+            <h3>{m.name}</h3>
+            <p>{m.role}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

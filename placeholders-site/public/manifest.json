@@ -3,17 +3,32 @@
   "name": "KnotFun",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "favicon/LogoPlaceHolders16.ico",
+      "sizes": "16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "favicon/LogoPlaceHolders24.ico",
+      "sizes": "24x24",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon/LogoPlaceHolders32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon/LogoPlaceHolder64.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo/LogoPlaceHolders192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logo/LogoPlaceHolders512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

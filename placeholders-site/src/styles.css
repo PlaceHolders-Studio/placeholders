@@ -17,13 +17,13 @@ body.light {
   --text: #121212;
 }
 
-body img.logo {
+/* body img.logo {
   filter: invert(1) hue-rotate(180deg);
 }
 
 body.light img.logo {
   filter: none;
-}
+} */
 
 header {
   background-color: var(--bg);
@@ -42,12 +42,6 @@ nav a {
   text-decoration: none;
 }
 
-section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
 button {
   background-color: var(--accent);
   color: white;
@@ -55,4 +49,103 @@ button {
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 4px;
+}
+
+/* General styling */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+h2 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content, .project-card, .team-member, .contact-item {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.team-member:nth-child(1) { animation-delay: 0.1s; }
+.team-member:nth-child(2) { animation-delay: 0.2s; }
+.team-member:nth-child(3) { animation-delay: 0.3s; }
+.team-member:nth-child(4) { animation-delay: 0.4s; }
+.team-member:nth-child(5) { animation-delay: 0.5s; }
+.team-member:nth-child(6) { animation-delay: 0.6s; }
+.team-member:nth-child(7) { animation-delay: 0.7s; }
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  nav {
+    display: none; /* At this stage, it's worth considering a mobile menu */
+  }
+  
+  .header-content {
+    justify-content: center;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7043;
 }
