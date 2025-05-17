@@ -8,6 +8,8 @@ This is a simple React website for [KnotFun / PlaceHolders](https://place-holder
 
 ### 1. Install Node.js
 
+<br/>
+
   - download from the website: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
   - **OR** install through package manager (e.g. `sudo dnf install nodejs` on RHEL/CentOS or `sudo apt install nodejs` on Ubuntu)
@@ -75,8 +77,6 @@ cd placeholders-site
 
 <br/>
 
-<br/>
-
 ```bash
 npm install gh-pages --save-dev
 ```
@@ -87,15 +87,11 @@ npm install gh-pages --save-dev
 
 <br/>
 
-<br/>
-
 Clear the `src` and `public` folders and add your custom content.
 
 <br/><br/>
 
 ### 6. Initialize a local git repository
-
-<br/>
 
 <br/>
 
@@ -119,6 +115,8 @@ git commit -m "Initial commit"
 
 ### 7. Create a GitHub repository (e.g. `KnotFun`)
 
+<br/>
+
   - Go to [https://github.com/new](https://github.com/new)
 
   - Give it a name, e.g. `KnotFun`
@@ -130,8 +128,6 @@ git commit -m "Initial commit"
 <br/><br/>
 
 ### 8. Link local project with GitHub repository
-
-<br/>
 
 <br/>
 
@@ -157,8 +153,6 @@ git push -u origin master
 
 <br/>
 
-<br/>
-
 ```bash
 npm run deploy
 ```
@@ -166,8 +160,6 @@ npm run deploy
 <br/><br/>
 
 ### 10. Test locally (optional, visit [`http://localhost:3000`](http://localhost:3000))
-
-<br/>
 
 <br/>
 
