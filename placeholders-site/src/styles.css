@@ -17,6 +17,14 @@ body.light {
   --text: #121212;
 }
 
+body img.logo {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body.light img.logo {
+  filter: none;
+}
+
 header {
   background-color: var(--bg);
   padding: 1rem 2rem;

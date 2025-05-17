@@ -12,6 +12,7 @@ const Header = () => {
       <img 
         src={process.env.PUBLIC_URL + '/knotfun-logo.png'}
         alt="PlaceHolders Logo"
+        className="logo"
         style={{ height: '60px' }}
       />
       <nav>
