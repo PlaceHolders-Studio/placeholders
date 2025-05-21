@@ -4,7 +4,7 @@ import './Hero.css';
 const Hero = () => (
   <section id="hero" className="hero-section">
     <div className="hero-content">
-      <h1><span className="accent">Knot</span>Fun</h1>
+      <h1><span className="accent">Place</span>Holders Studio</h1>
       <p className="hero-subtitle">Crafting indie games with heart and pixels.</p>
       <div className="hero-buttons">
         <a href="#projects" className="btn btn-primary">See Our Projects</a>

@@ -89,3 +89,64 @@
   left: -25%;
   transform: rotate(-15deg);
 }
+
+/* Responsywność dla średnich ekranów */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.5rem; /* Zmniejsz rozmiar czcionki nagłówka */
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column; /* Przyciski jeden pod drugim */
+    width: 100%;
+    max-width: 250px; /* Zmniejsz maksymalną szerokość */
+    margin: 0 auto;
+    gap: 0.8rem; /* Mniejszy odstęp między przyciskami */
+  }
+  
+  .btn {
+    width: 100%; /* Pełna szerokość przycisków */
+    text-align: center;
+    box-sizing: border-box; /* Upewnij się, że padding nie zwiększa szerokości */
+    padding: 0.7rem 1rem; /* Mniejszy padding w przyciskach */
+    font-size: 0.9rem; /* Nieco mniejsza czcionka */
+  }
+}
+
+/* Responsywność dla małych ekranów */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem; /* Jeszcze mniejszy rozmiar czcionki */
+    line-height: 1.2;
+    word-break: break-word; /* Pozwala łamać długie słowa */
+    hyphens: auto; /* Wspiera dzielenie wyrazów */
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    max-width: 220px; /* Jeszcze mniejsza szerokość na bardzo małych ekranach */
+  }
+  
+  .btn {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .hero-section {
+    padding: 1rem;
+  }
+}
+
+/* Najmniejsze ekrany - dodatkowe zasady */
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}

@@ -55,7 +55,7 @@ const Header = () => {
               alt="PlaceHolders Logo"
               className="logo"
             />
-            <span className="site-name">KnotFun</span>
+            <span className="site-name">PlaceHolders</span>
           </a>
         </div>
 
@@ -86,7 +86,7 @@ const Header = () => {
                 alt="PlaceHolders Logo"
                 className="mobile-logo"
               />
-              <span className="mobile-site-name">KnotFun</span>
+              <span className="mobile-site-name">PlaceHolders</span>
             </a>
           )}
           

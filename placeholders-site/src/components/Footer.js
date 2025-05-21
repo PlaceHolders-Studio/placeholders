@@ -29,9 +29,9 @@ const Footer = () => {
               alt="KnotFun"
               className="footer-logo-img"
             />
-            <span>KnotFun</span>
+            <span>PlaceHolders Studio</span>
           </div>
-          <p className="copyright">© {currentYear} PlaceHolders Team. All rights reserved.</p>
+          <p className="copyright">© {currentYear} PlaceHolders Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>
