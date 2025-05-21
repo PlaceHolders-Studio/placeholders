@@ -32,7 +32,7 @@
 
 section#team h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--step-3);
   margin-bottom: 3rem;
 }
 
@@ -40,11 +40,13 @@ section#team h2 {
 .team-member h3 {
   margin-top: 0;
   color: var(--accent);
+  font-size: var(--step-1);
 }
 
 .team-member p {
   opacity: 0.8;
   margin: 0;
+  font-size: var(--step-0);
 }
 
 /* Tablet optimization */
@@ -87,7 +89,7 @@ section#team h2 {
   }
   
   section#team h2 {
-    font-size: 2rem;
+    /* font-size: var(--step-2); */
     margin-bottom: 2rem;
   }
 }
@@ -96,6 +98,8 @@ section#team h2 {
 @media (max-width: 375px) {
   .team-grid {
     grid-template-columns: minmax(260px, 1fr);
+    /* grid-template-columns: 1fr; */
+    gap: 1rem;
     padding: 0 0.5rem;
   }
   
@@ -105,13 +109,17 @@ section#team h2 {
     min-height: 150px;
     padding: 1.25rem 1rem;
   }
+
+  .team-member:last-child:nth-child(2n+1) {
+    width: 295px;
+  }
   
   .team-member h3 {
-    font-size: 0.95rem;
+    font-size: var(--step-1);
   }
   
   .team-member p {
-    font-size: 0.85rem;
+    font-size: var(--step-0);
   }
 }
 
@@ -129,11 +137,11 @@ section#team h2 {
   }
   
   .team-member h3 {
-    font-size: 0.9rem;
+    font-size: var(--step--1);
   }
   
   .team-member p {
-    font-size: 0.8rem;
+    font-size: var(--step--2);
   }
   
   /* Fix for last item in landscape mode when odd number of cards */

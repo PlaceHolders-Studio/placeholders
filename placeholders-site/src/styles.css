@@ -1,6 +1,18 @@
 /* Dark mode compatibility variables */
 html {
   color-scheme: light dark;
+  
+  /* Advanced responsive typography with fluid typography technique */
+  --fluid-min-width: 320;
+  --fluid-max-width: 1200;
+  --fluid-min-size: 16;
+  --fluid-max-size: 18;
+  
+  font-size: clamp(
+    calc(var(--fluid-min-size) / 16 * 1rem), 
+    calc((var(--fluid-min-size) + (var(--fluid-max-size) - var(--fluid-min-size)) * ((100vw - (var(--fluid-min-width) / 16) * 1rem) / ((var(--fluid-max-width) - var(--fluid-min-width)) / 16))), 
+    calc(var(--fluid-max-size) / 16 * 1rem)
+  ));
 }
 
 :root {
@@ -14,14 +26,20 @@ html {
   --header-bg: rgba(18, 18, 18, 0.8);
   --shadow-color: rgba(0, 0, 0, 0.1);
   --shadow-color-hover: rgba(0, 0, 0, 0.2);
-}
 
-/* Dark Reader compatibility - to prevent over-darkening */
-[data-darkreader-scheme="dark"] {
-  --bg: #121212 !important;
-  --text: #ffffff !important;
-  --header-bg: rgba(18, 18, 18, 0.8) !important;
-  --card-bg: rgba(255, 255, 255, 0.05) !important;
+  /* Typography scale with fluid responsive approach */
+  --scale-ratio: 1.250; /* Major third scale */
+  --base-size: 1rem;
+  
+  /* Fluid typography variables */
+  --step--2: clamp(0.64rem, 0.5vw + 0.5rem, 0.8rem);
+  --step--1: clamp(0.8rem, 0.65vw + 0.6rem, 1rem);
+  --step-0: clamp(1rem, 0.8vw + 0.7rem, 1.25rem);
+  --step-1: clamp(1.25rem, 1vw + 0.9rem, 1.563rem);
+  --step-2: clamp(1.563rem, 1.2vw + 1.1rem, 1.953rem);
+  --step-3: clamp(1.953rem, 1.5vw + 1.4rem, 2.441rem);
+  --step-4: clamp(2.441rem, 1.8vw + 1.7rem, 3.052rem);
+  --step-5: clamp(3.052rem, 2.2vw + 2.1rem, 3.815rem);
 }
 
 body {
@@ -30,6 +48,8 @@ body {
   background-color: var(--bg);
   color: var(--text);
   transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+  font-size: var(--step-0);
 }
 
 body.light {
@@ -39,6 +59,14 @@ body.light {
   --header-bg: rgba(255, 255, 255, 0.8);
   --shadow-color: rgba(0, 0, 0, 0.1);
   --shadow-color-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Reader compatibility - to prevent over-darkening */
+[data-darkreader-scheme="dark"] {
+  --bg: #121212 !important;
+  --text: #ffffff !important;
+  --header-bg: rgba(18, 18, 18, 0.8) !important;
+  --card-bg: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* Dark Reader compatibility - to ensure light mode works */
@@ -119,6 +147,40 @@ h2::after {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+* More robust and fluid typography */
+h1 {
+  font-size: var(--step-4);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: var(--step-3);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: var(--step-2);
+  line-height: 1.3;
+}
+
+p, li, blockquote {
+  font-size: var(--step-0);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+small, .small-text {
+  font-size: var(--step--1);
+}
+
+.subtitle, .hero-subtitle {
+  font-size: var(--step-1);
+  opacity: 0.8;
 }
 
 /* Animation */
@@ -212,6 +274,12 @@ h2::after {
     --text: #121212;
     --card-bg: rgba(0, 0, 0, 0.05);
     --header-bg: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: clamp(14px, 4vw + 0.5rem, 16px);
   }
 }
 

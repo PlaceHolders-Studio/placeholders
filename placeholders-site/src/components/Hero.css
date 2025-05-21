@@ -16,7 +16,7 @@
 }
 
 .hero-content h1 {
-  font-size: 5rem;
+  font-size: var(--step-4);
   margin-bottom: 1rem;
   font-weight: 800;
 }
@@ -26,7 +26,7 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: var(--step-1);
   margin-bottom: 2.5rem;
   opacity: 0.8;
 }
@@ -39,7 +39,7 @@
 
 .btn {
   padding: 0.8rem 1.8rem;
-  font-size: 1rem;
+  font-size: var(--step-0);
   border-radius: 4px;
   font-weight: 600;
   text-decoration: none;
@@ -90,49 +90,49 @@
   transform: rotate(-15deg);
 }
 
-/* Responsywność dla średnich ekranów */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 3.5rem; /* Zmniejsz rozmiar czcionki nagłówka */
+    font-size: var(--step-3);
   }
   
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: var(--step-0);
   }
   
   .hero-buttons {
-    flex-direction: column; /* Przyciski jeden pod drugim */
+    flex-direction: column;
     width: 100%;
-    max-width: 250px; /* Zmniejsz maksymalną szerokość */
+    max-width: 250px;
     margin: 0 auto;
-    gap: 0.8rem; /* Mniejszy odstęp między przyciskami */
+    gap: 0.8rem;
   }
   
   .btn {
-    width: 100%; /* Pełna szerokość przycisków */
+    width: 100%;
     text-align: center;
-    box-sizing: border-box; /* Upewnij się, że padding nie zwiększa szerokości */
-    padding: 0.7rem 1rem; /* Mniejszy padding w przyciskach */
-    font-size: 0.9rem; /* Nieco mniejsza czcionka */
+    box-sizing: border-box;
+    padding: 0.7rem 1rem;
+    font-size: var(--step--1);
   }
 }
 
-/* Responsywność dla małych ekranów */
+/* Small screens */
 @media (max-width: 480px) {
   .hero-content h1 {
-    font-size: 2.5rem; /* Jeszcze mniejszy rozmiar czcionki */
+    font-size: var(--step-5);
     line-height: 1.2;
-    word-break: break-word; /* Pozwala łamać długie słowa */
-    hyphens: auto; /* Wspiera dzielenie wyrazów */
+    word-break: break-word;
+    hyphens: auto;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: var(--step--1);
     margin-bottom: 2rem;
   }
 
   .hero-buttons {
-    max-width: 220px; /* Jeszcze mniejsza szerokość na bardzo małych ekranach */
+    max-width: 220px;
   }
   
   .btn {
@@ -144,9 +144,9 @@
   }
 }
 
-/* Najmniejsze ekrany - dodatkowe zasady */
-@media (max-width: 360px) {
+/* Smallest screens */
+@media (max-width: 375px) {
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: var(--step-4);
   }
 }
