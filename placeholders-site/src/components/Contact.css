@@ -33,7 +33,7 @@
   width: 100%;
   max-width: 500px;
   transition: transform 0.3s ease;
-  flex-wrap: wrap; /* Add wrap for smaller screens */
+  flex-wrap: wrap;
   box-sizing: border-box;
 }
 
@@ -64,12 +64,15 @@
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
-  justify-content: center; /* Wycentruj przyciski */
-  width: 100%; /* Pełna szerokość kontenera */
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .social-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.8rem 1.5rem;
   border: 2px solid var(--accent);
   border-radius: 4px;
@@ -77,6 +80,7 @@
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  min-width: 120px;
 }
 
 .social-link:hover {
@@ -85,36 +89,34 @@
 }
 
 .contact-item p {
-  word-break: break-all; /* Pozwala na łamanie słów */
-  overflow-wrap: break-word; /* Dodatkowe wsparcie dla zawijania długich słów */
-  max-width: 100%; /* Zapewnia, że tekst nie wyjdzie poza rodzica */
+  word-break: break-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
   margin: 0;
 }
 
-/* @media (max-width: 500px) {
-  .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem 1rem;
-  }
-  
-  .contact-icon {
-    margin-bottom: 0.5rem;
-  }
-  
-  .contact-social {
-    flex-direction: column;
-    width: 100%;
-    max-width: 200px;
+/* Tablet optimization */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-section {
+    padding: 5rem 2rem;
   }
   
   .social-link {
-    width: 100%;
-    text-align: center;
+    min-width: 140px;
   }
-} */
+}
+
+/* Mobile styling */
 @media (max-width: 500px) {
+  .contact-section {
+    padding: 4rem 1rem;
+  }
+  
+  .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
   .contact-item {
     flex-direction: column;
     align-items: center;
@@ -123,7 +125,7 @@
   }
   
   .contact-item p {
-    width: 100%; /* Pełna szerokość dla kontenera paragrafu */
+    width: 100%;
     text-align: center;
   }
   
@@ -135,12 +137,30 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 250px; /* Większa szerokość dla przycisków */
+    max-width: 250px;
   }
   
   .social-link {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+    min-height: 44px;
+  }
+}
+
+/* Landscape orientation adjustment */
+@media (max-height: 500px) and (orientation: landscape) {
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+  
+  .contact-social {
+    flex-direction: row;
+    max-width: 100%;
+  }
+  
+  .social-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }

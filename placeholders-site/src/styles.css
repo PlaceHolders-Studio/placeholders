@@ -1,3 +1,29 @@
+/* Dark mode compatibility variables */
+html {
+  color-scheme: light dark;
+}
+
+:root {
+  --bg: #121212;
+  --text: #ffffff;
+  --accent: #ff5722;
+  
+  /* Additional variables for better dark mode handling */
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-hover-bg: rgba(255, 87, 34, 0.1);
+  --header-bg: rgba(18, 18, 18, 0.8);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color-hover: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Reader compatibility - to prevent over-darkening */
+[data-darkreader-scheme="dark"] {
+  --bg: #121212 !important;
+  --text: #ffffff !important;
+  --header-bg: rgba(18, 18, 18, 0.8) !important;
+  --card-bg: rgba(255, 255, 255, 0.05) !important;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -6,25 +32,39 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-:root {
-  --bg: #121212;
-  --text: #ffffff;
-  --accent: #ff5722;
-  /* --accent: #22cbff; */
-}
-
 body.light {
   --bg: #ffffff;
   --text: #121212;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color-hover: rgba(0, 0, 0, 0.15);
 }
 
-/* body img.logo {
-  filter: invert(1) hue-rotate(180deg);
+/* Dark Reader compatibility - to ensure light mode works */
+[data-darkreader-scheme="light"] body.light {
+  --bg: #ffffff !important;
+  --text: #121212 !important;
+  --header-bg: rgba(255, 255, 255, 0.8) !important;
+  --card-bg: rgba(0, 0, 0, 0.05) !important;
 }
 
-body.light img.logo {
-  filter: none;
-} */
+/* General protection against overflow */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improved scrolling with fixed header */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for fixed header */
+}
 
 header {
   background-color: var(--bg);
@@ -53,10 +93,6 @@ button {
 }
 
 /* General styling */
-html {
-  scroll-behavior: smooth;
-}
-
 section {
   padding: 6rem 2rem;
   max-width: 1200px;
@@ -125,11 +161,57 @@ h2::after {
   }
   
   nav {
-    display: none; /* At this stage, it's worth considering a mobile menu */
+    display: none;
   }
   
   .header-content {
     justify-content: center;
+  }
+  
+  /* Larger touch targets for mobile */
+  .btn, .btn-link, nav a, .social-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 4rem 2rem;
+  }
+  
+  section {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  section {
+    padding: 5rem 2rem;
+  }
+}
+
+/* System preference for dark/light mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --header-bg: rgba(18, 18, 18, 0.8);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --text: #121212;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --header-bg: rgba(255, 255, 255, 0.8);
   }
 }
 
