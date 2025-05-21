@@ -1,0 +1,40 @@
+{
+  "short_name": "KnotFun",
+  "name": "KnotFun",
+  "icons": [
+    {
+      "src": "favicon/LogoPlaceHolders16.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon/LogoPlaceHolders24.ico",
+      "sizes": "24x24",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon/LogoPlaceHolders32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon/LogoPlaceHolder64.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo/LogoPlaceHolders192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo/LogoPlaceHolders512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
