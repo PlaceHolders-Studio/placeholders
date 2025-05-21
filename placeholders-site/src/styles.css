@@ -8,15 +8,20 @@ html {
 	--fluid-min-size: 16;
 	--fluid-max-size: 18;
 
-	font-size: clamp(
+	/* font-size: clamp(
 		calc(var(--fluid-min-size) / 16 * 1rem),
 		calc(
-			(
-				var(--fluid-min-size) + (var(--fluid-max-size) - var(--fluid-min-size)) *
-					((100vw - (var(--fluid-min-width) / 16) * 1rem) / ((var(--fluid-max-width) - var(--fluid-min-width)) / 16))
-			),
-			calc(var(--fluid-max-size) / 16 * 1rem)
+			(var(--fluid-min-size) + (var(--fluid-max-size) - var(--fluid-min-size)) *((100vw - (var(--fluid-min-width) / 16) * 1rem) / ((var(--fluid-max-width) - var(--fluid-min-width)) / 16))), calc(var(--fluid-max-size) / 16 * 1rem)
 		)
+	); */
+
+  --fluid-slope: calc((var(--fluid-max-size) - var(--fluid-min-size)) / (var(--fluid-max-width) - var(--fluid-min-width)));
+	--fluid-base: calc(var(--fluid-min-size) - var(--fluid-slope) * var(--fluid-min-width));
+
+	font-size: clamp(
+		calc(var(--fluid-min-size) * 1px),
+		calc(var(--fluid-base) * 1px + var(--fluid-slope) * 100vw),
+		calc(var(--fluid-max-size) * 1px)
 	);
 
 	/* Improved scrolling with fixed header */
