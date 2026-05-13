@@ -16,7 +16,7 @@ function deploy(target) {
 
 	const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 	pkg.homepage = homepages[target]
-	fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2))
+	fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n')
 
 	execSync('npm run build', { stdio: 'inherit' })
 
@@ -25,7 +25,7 @@ function deploy(target) {
 	execSync(`npx gh-pages -d build -r ${remotes[target]}`, { stdio: 'inherit' })
 
 	delete pkg.homepage
-	fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2))
+	fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n')
 }
 
 const args = process.argv.slice(2)
